@@ -14,7 +14,7 @@ node module that provides access to the Windows Registry through the REG command
 The following command installs node-winreg.
 
 ```shell
-npm install winreg 
+npm install winreg
 ```
 
 If you prefer to install _without the delopement tools used to generate the HTML documentation_ (into a production environment for example) you should use the following command.
@@ -75,6 +75,17 @@ regKey.values(function (err, items /* array of RegistryItem */) {
     for (var i=0; i<items.length; i++)
       console.log('ITEM: '+items[i].name+'\t'+items[i].type+'\t'+items[i].value);
 });
+```
+
+All methods return a promise if no callback is specified.
+
+```javascript
+regKey.values()
+.then(items => {
+  for (var i=0; i<items.length; i++)
+    console.log('ITEM: '+items[i].name+'\t'+items[i].type+'\t'+items[i].value);
+})
+.catch(err => console.log('ERROR '+err))
 ```
 
 ## Troubleshooting ##

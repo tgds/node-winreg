@@ -3,6 +3,7 @@
   "version": "1.3.0",
   "description": "provides access to the windows registry through the REG tool",
   "main": "lib/registry.js",
+  "types": "lib/registry.d.ts",
   "scripts": {
     "test": "mocha test",
     "generate-docs": "jsdoc -c ./jsdoc.conf.json",
